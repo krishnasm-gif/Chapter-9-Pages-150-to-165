@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: What is Inside the Atom? - Class 9 Physical Science (SCERT Telangana)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', 'Noto Sans Telugu', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed">
+
+    <!-- VISITOR TRACKING MODAL -->
+    <div id="visitorModal" class="fixed inset-0 bg-slate-900/80 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 text-center">
+            <h2 class="text-2xl font-bold text-blue-600 mb-2">What is Inside the Atom? Study Portal</h2>
+            <p class="text-sm text-slate-600 mb-6">Please enter your Name and Roll Number to begin tracking your study session and timer automatically.</p>
+            <form id="visitorForm" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Full Name / పేరు</label>
+                    <input type="text" id="visitorName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Roll Number / రోల్ నంబర్</label>
+                    <input type="text" id="visitorRoll" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">Start Learning / అభ్యాసం ప్రారంభించండి</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING TIMER & REPORT BAR -->
+    <div class="bg-slate-900 text-white text-xs py-2 px-4 sticky top-0 z-40 flex justify-between items-center shadow-md">
+        <div class="flex items-center space-x-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="sessionTimer">Time Spent: 00:00</span>
+        </div>
+        <button onclick="sendReport()" class="bg-emerald-600 hover:bg-emerald-500 px-3 py-1 rounded text-white font-medium transition">Send Report to Teacher</button>
+    </div>
+
+    <!-- HEADER -->
+    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-12 px-6 text-center shadow-lg">
+        <h1 class="text-3xl md:text-5xl font-bold mb-2">Chapter 9: What is Inside the Atom?</h1>
+        <p class="text-blue-200 text-sm md:text-base">Class 9 Physical Science | SCERT Telangana Syllabus (Pages 150 - 165)</p>
+    </header>
+
+    <!-- UPPER INDEX (QUICK NAVIGATION) -->
+    <nav class="bg-white border-b sticky top-9 z-30 shadow-sm overflow-x-auto whitespace-nowrap px-6 py-3 flex space-x-6 text-sm font-medium text-blue-600">
+        <a href="#intro" class="hover:underline">Introduction & Sub-atomic Particles (150-152)</a>
+        <a href="#models" class="hover:underline">Atomic Models: Thomson, Rutherford, Bohr (152-156)</a>
+        <a href="#distribution" class="hover:underline">Electron Distribution & Valency (158-160)</a>
+        <a href="#mass-isotopes" class="hover:underline">Atomic Number, Mass Number & Isotopes (161-163)</a>
+        <a href="#keypoints" class="hover:underline">40 Key Points</a>
+        <a href="#glossary" class="hover:underline">Glossary (40 Terms)</a>
+        <a href="#exercises" class="hover:underline">Exercises & Q&A</a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+
+        <!-- SECTION 1: INTRODUCTION & SUB-ATOMIC PARTICLES -->
+        <section id="intro" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded">Pages 150 - 152</span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-3 mb-4">Introduction and Sub-atomic Particles</h2>
+            <div class="space-y-4 text-slate-700">
+                <p><strong>English:</strong> In previous chapters we have learnt that all matter is made up of atoms. The first modern atomic theory was proposed by John Dalton. According to Dalton, atoms were indivisible. However, discoveries like Michael Faraday's electrolysis experiments and sub-atomic particles (electrons, protons, and neutrons) proved that atoms are divisible.</p>
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded text-slate-800">
+                    <p class="font-semibold text-amber-900">తెలుగు వివరణ (Telugu Description):</p>
+                    <p class="text-sm mt-1">అన్ని పదార్థాలు పరమాణువులతో నిర్మితమై ఉన్నాయని ముందస్తు అధ్యాయాలలో నేర్చుకున్నాం. జాన్ డాల్టన్ ప్రకారం పరమాణువులు విభజించలేనివి. కానీ మైకెల్ ఫెరడే విద్యుద్విశ్లేషణ ప్రయోగాలు మరియు ఇతర పరిశోధనల ద్వారా పరమాణువులో ఎలక్ట్రాన్లు, ప్రోటాన్లు, మరియు న్యూట్రాన్లు అనే పరమాణువు అంతర్గత కణాలు (sub-atomic particles) ఉన్నాయని తేలింది.</p>
+                    <p class="text-xs text-amber-700 mt-2"><strong>Example / ఉదాహరణ:</strong> An atom consists of a central nucleus surrounded by electrons. (పరమాణువు కేంద్రంలో కేంద్రకం ఉండి, దాని చుట్టూ ఎలక్ట్రాన్లు ఉంటాయి.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ATOMIC MODELS -->
+        <section id="models" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded">Pages 152 - 156</span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-3 mb-4">Atomic Models: Thomson, Rutherford, and Bohr</h2>
+            <div class="space-y-4 text-slate-700">
+                <p><strong>English:</strong> To understand the structure of an atom, scientists developed various models. J.J. Thomson proposed the plum-pudding/watermelon model. Later, Ernest Rutherford's alpha-particle scattering experiment led to the discovery of the dense positive nucleus. Niels Bohr modified it by introducing discrete energy levels (shells) where electrons revolve without radiating energy.</p>
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded text-slate-800">
+                    <p class="font-semibold text-amber-900">తెలుగు వివరణ (Telugu Description):</p>
+                    <p class="text-sm mt-1">పరమాణువు నిర్మాణాన్ని వివరించడానికి వివిధ నమూనాలు ప్రతిపాదించబడ్డాయి. జె.జె. థామ్సన్ పుచ్చకాయ నమూనాను ఇచ్చారు. రూథర్‌ఫర్డ్ ఆల్ఫా కణాల పరిక్షేపణ ప్రయోగం ద్వారా కేంద్రీకృత ధనావేశం (న్యూక్లియస్) కనుగొనబడింది. ఎలక్ట్రాన్లు శక్తి స్థాయిలలో భ్రమణం చెందుతాయని నీల్స్ బోర్ వివరించారు.</p>
+                    <p class="text-xs text-amber-700 mt-2"><strong>Example / ఉదాహరణ:</strong> Bohr's model resembles planetary orbits around the sun. (బోర్ నమూనా సూర్యుని చుట్టూ తిరిగే గ్రహాల కక్ష్యలను పోలి ఉంటుంది.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ELECTRON DISTRIBUTION & VALENCY -->
+        <section id="distribution" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded">Pages 158 - 160</span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-3 mb-4">Distribution of Electrons in Orbits and Valency</h2>
+            <div class="space-y-4 text-slate-700">
+                <p><strong>English:</strong> Bohr and Bury proposed rules for electron distribution using the formula 2n² for maximum capacity in shells (K, L, M, N...). The electrons in the outermost shell are valence electrons, determining the valency or combining capacity of an element to achieve a stable octet.</p>
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded text-slate-800">
+                    <p class="font-semibold text-amber-900">తెలుగు వివరణ (Telugu Description):</p>
+                    <p class="text-sm mt-1">బోర్-బరీ నియమాల ప్రకారం వివిధ కక్ష్యలలో (K, L, M, N...) ఎలక్ట్రాన్ల గరిష్ట సంఖ్య 2n² సూత్రం ద్వారా నిర్ణయించబడుతుంది. బాహ్య కక్ష్యలోని ఎలక్ట్రాన్లను వేలెన్స్ ఎలక్ట్రాన్లు అంటారు. అష్టక రూపాన్ని (octet) సాధించడానికి మూలకాల సంయోగ సామర్థ్యాన్ని వాలెన్సీ (Valency) అంటారు.</p>
+                    <p class="text-xs text-amber-700 mt-2"><strong>Example / ఉదాహరణ:</strong> Carbon has 4 valence electrons, giving it a valency of 4. (కార్బన్‌కు 4 వేలెన్స్ ఎలక్ట్రాన్లు ఉంటాయి, కాబట్టి దాని వాలెన్సీ 4.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ATOMIC NUMBER, MASS NUMBER & ISOTOPES -->
+        <section id="mass-isotopes" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded">Pages 161 - 163</span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-3 mb-4">Atomic Number, Mass Number, and Isotopes</h2>
+            <div class="space-y-4 text-slate-700">
+                <p><strong>English:</strong> Atomic number (Z) is the number of protons in a nucleus. Atomic mass number (A) is the sum of protons and neutrons (A = Z + N). Isotopes are atoms of the same element having the same atomic number but different mass numbers due to varying neutron counts.</p>
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded text-slate-800">
+                    <p class="font-semibold text-amber-900">తెలుగు వివరణ (Telugu Description):</p>
+                    <p class="text-sm mt-1">పరమాణు సంఖ్య (Z) అనగా ప్రోటాన్ల సంఖ్య. ద్రవ్యరాశి సంఖ్య (A) అనగా ప్రోటాన్లు మరియు న్యూట్రాన్ల మొత్తం. ఒకే పరమాణు సంఖ్యను కలిగి ఉండి, వేర్వేరు ద్రవ్యరాశి సంఖ్యలు గల ఒకే మూలకం యొక్క పరమాణువులను ఐసోటోపులు (Isotopes) అంటారు.</p>
+                    <p class="text-xs text-amber-700 mt-2"><strong>Example / ఉదాహరణ:</strong> Protium, Deuterium, and Tritium are isotopes of hydrogen. (ప్రోటియం, డ్యూటెరియం, ట్రిటియం లు హైడ్రోజన్ ఐసోటోపులు.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 40 KEY POINTS -->
+        <section id="keypoints" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6">40 Key Points (40 ముఖ్యాంశాలు)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700">
+                <div class="bg-slate-50 p-3 rounded border">1. John Dalton proposed the first modern atomic theory stating atoms are indivisible. (జాన్ డాల్టన్ తొలి ఆధునిక పరమాణు సిద్ధాంతాన్ని ప్రతిపాదించారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">2. Michael Faraday discovered that atoms acquire negative charges during electrolysis. (విద్యుద్విశ్లేషణలో పరమాణువులు రుణావేశాన్ని పొందుతాయని మైకెల్ ఫెరడే కనుగొన్నారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">3. Sub-atomic particles are smaller particles present inside an atom. (పరమాణువు లోపల ఉండే సూక్ష్మ కణాలను పరమాణు అంతర్గత కణాలు అంటారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">4. J.J. Thomson discovered electrons in 1897 using discharge tubes. (జె.జె. థామ్సన్ 1897లో ఎలక్ట్రాన్లను కనుగొన్నారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">5. Electrons are negatively charged particles with negligible mass. (ఎలక్ట్రాన్లు రుణావేశిత కణాలు, వాటి ద్రవ్యరాశి చాలా తక్కువ.)</div>
+                <div class="bg-slate-50 p-3 rounded border">6. Protons are positively charged particles discovered in 1920. (ప్రోటాన్లు ధనావేశిత కణాలు, వీటిని 1920లో కనుగొన్నారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">7. Mass of a proton is about 1836 times greater than an electron. (ప్రోటాన్ ద్రవ్యరాశి ఎలక్ట్రాన్ కంటే దాదాపు 1836 రెట్లు ఎక్కువ.)</div>
+                <div class="bg-slate-50 p-3 rounded border">8. James Chadwick discovered neutrons in 1932. (జేమ్స్ చాడ్విక్ 1932లో న్యూట్రాన్లను కనుగొన్నారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">9. Neutrons are uncharged particles present in the nucleus. (న్యూట్రాన్లు ఆవేశం లేని కణాలు, ఇవి కేంద్రకంలో ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">10. Atoms are electrically neutral because protons equal electrons. (ప్రోటాన్లు, ఎలక్ట్రాన్లు సమానంగా ఉండటం వల్ల పరమాణువులు తటస్థంగా ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">11. J.J. Thomson proposed the plum pudding or watermelon model. (థామ్సన్ పుచ్చకాయ నమూనాను ప్రతిపాదించారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">12. Ernest Rutherford conducted the gold foil alpha-particle scattering experiment. (రూథర్‌ఫర్డ్ బంగారు పత్రంపై ఆల్ఫా కణాల పరిక్షేపణ ప్రయోగం చేశారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">13. Most space inside an atom is empty. (పరమాణువు లోపల ఎక్కువ భాగం ఖాళీగా ఉంటుంది.)</div>
+                <div class="bg-slate-50 p-3 rounded border">14. The positive charge and mass are concentrated in a tiny centre called nucleus. (ధనావేశం మరియు ద్రవ్యరాశి కేంద్రకం వద్ద కేంద్రీకృతమై ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">15. Rutherford's model is referred to as the planetary model. (రూథర్‌ఫర్డ్ నమూనాను గ్రహాల నమూనా అంటారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">16. Rutherford's model failed to explain atomic stability due to energy radiation. (శక్తి ఉద్గారాల కారణంగా రూథర్‌ఫర్డ్ నమూనా స్థిరత్వాన్ని వివరించలేకపోయింది.)</div>
+                <div class="bg-slate-50 p-3 rounded border">17. Niels Bohr proposed discrete energy levels for electron orbits in 1913. (నీల్స్ బోర్ 1913లో శక్తి స్థాయిల సిద్ధాంతాన్ని ప్రతిపాదించారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">18. Electrons do not radiate energy while revolving in stationary orbits. (స్థిర కక్ష్యలలో తిరిగేటప్పుడు ఎలక్ట్రాన్లు శక్తిని ఉద్గారించవు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">19. Shells or energy levels are represented by letters K, L, M, N... or n = 1, 2, 3... (కక్ష్యలను K, L, M, N లేదా n=1, 2, 3.. తో సూచిస్తారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">20. The maximum electron capacity in a shell is given by formula 2n². (కక్ష్యలో గరిష్ట ఎలక్ట్రాన్ల సంఖ్య 2n² సూత్రం ఇస్తుంది.)</div>
+                <div class="bg-slate-50 p-3 rounded border">21. K-shell can accommodate a maximum of 2 electrons. (K-కక్ష్యలో గరిష్టంగా 2 ఎలక్ట్రాన్లు ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">22. L-shell can accommodate a maximum of 8 electrons. (L-కక్ష్యలో గరిష్టంగా 8 ఎలక్ట్రాన్లు ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">23. M-shell can accommodate a maximum of 18 electrons. (M-కక్ష్యలో గరిష్టంగా 18 ఎలక్ట్రాన్లు ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">24. N-shell can accommodate a maximum of 32 electrons. (N-కక్ష్యలో గరిష్టంగా 32 ఎలక్ట్రాన్లు ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">25. Electrons fill inner shells first in a stepwise manner. (లోపలి కక్ష్యలు నిండిన తర్వాతే బయటి కక్ష్యలలోకి ఎలక్ట్రాన్లు చేరుతాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">26. Valence electrons are electrons present in the outermost shell. (బాహ్య కక్ష్యలో ఉండే ఎలక్ట్రాన్లను వేలెన్స్ ఎలక్ట్రాన్లు అంటారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">27. Valency is the combining capacity of an element. (మూలకం యొక్క సంయోగ సామర్థ్యాన్ని వాలెన్సీ అంటారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">28. Noble gases (He, Ne, Ar) have completely filled outer shells and are unreactive. (జడ వాయువులు సంయోగం చెందవు, వాటి బాహ్య కక్ష్యలు నిండి ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">29. An outermost shell with 8 electrons possesses an octet configuration. (బాహ్య కక్ష్యలో 8 ఎలక్ట్రాన్లు ఉంటే దానిని అష్టక రూపు అంటారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">30. Atoms attain stability by transferring or sharing electrons. (ఎలక్ట్రాన్ల మార్పిడి లేదా పంచుకోవడం ద్వారా పరమాణువులు స్థిరత్వం పొందుతాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">31. Atomic number (Z) is equal to the number of protons in the nucleus. (పరమాణు సంఖ్య Z అనేది ప్రోటాన్ల సంఖ్యకు సమానం.)</div>
+                <div class="bg-slate-50 p-3 rounded border">32. Atomic mass number (A) is the sum of protons and neutrons. (ద్రవ్యరాశి సంఖ్య A అనేది ప్రోటాన్లు, న్యూట్రాన్ల మొత్తం.)</div>
+                <div class="bg-slate-50 p-3 rounded border">33. Formula for mass number is A = Z + N. (ద్రవ్యరాశి సంఖ్య సూత్రం A = Z + N.)</div>
+                <div class="bg-slate-50 p-3 rounded border">34. Isotopes are atoms of the same element with different neutron numbers. (ఒకే మూలకానికి చెందిన వేర్వేరు న్యూట్రాన్ సంఖ్య గల పరమాణువులను ఐసోటోపులు అంటారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">35. Hydrogen has three isotopes: Protium, Deuterium, and Tritium. (హైడ్రోజన్‌కు 3 ఐసోటోపులు ఉన్నాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">36. Chemical properties of isotopes are similar, but physical properties differ. (ఐసోటోపుల రసాయన ధర్మాలు ఒకేలా, భౌతిక ధర్మాలు వేరుగా ఉంటాయి.)</div>
+                <div class="bg-slate-50 p-3 rounded border">37. Average atomic mass depends on the percentage abundance of isotopes. (సగటు పరమాణు ద్రవ్యరాశి ఐసోటోపుల లభ్యత శాతాలపై ఆధారపడి ఉంటుంది.)</div>
+                <div class="bg-slate-50 p-3 rounded border">38. Uranium isotope is used as fuel in nuclear reactors. (యురేనియం ఐసోటోప్ అణు రియాక్టర్లలో ఇంధనంగా వాడతారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">39. Iodine isotope is used in the treatment of goitre. (అయోడిన్ ఐసోటోప్ గాయిటర్ చికిత్సకు వాడతారు.)</div>
+                <div class="bg-slate-50 p-3 rounded border">40. Cobalt isotope is used in the treatment of cancer. (కోబాల్ట్ ఐసోటోప్ క్యాన్సర్ చికిత్సకు ఉపయోగపడుతుంది.)</div>
+            </div>
+        </section>
+
+        <!-- 40 GLOSSARY TERMS -->
+        <section id="glossary" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6">Glossary Vocabulary (40 పదకోశ పదాలు)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="p-3 bg-slate-50 rounded border"><strong>1. Atom (పరమాణువు):</strong> Basic building block of matter.<br><em>Ex:</em> Everything is made of atoms. (అన్ని పదార్థాలు పరమాణువులతో తయారయ్యాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>2. Sub-atomic Particle (పరమాణు అంతర్గత కణం):</strong> Particles inside an atom.<br><em>Ex:</em> Electrons are sub-atomic particles. (ఎలక్ట్రాన్లు పరమాణు అంతర్గత కణాలు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>3. Electron (ఎలక్ట్రాన్):</strong> Negatively charged particle.<br><em>Ex:</em> Electrons revolve around the nucleus. (ఎలక్ట్రాన్లు కేంద్రకం చుట్టూ తిరుగుతాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>4. Proton (ప్రోటాన్):</strong> Positively charged particle in nucleus.<br><em>Ex:</em> Protons reside inside the nucleus. (ప్రోటాన్లు కేంద్రకంలో ఉంటాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>5. Neutron (న్యూట్రాన్):</strong> Neutral particle in nucleus.<br><em>Ex:</em> Neutrons have zero charge. (న్యూట్రాన్లకు ఆవేశం ఉండదు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>6. Nucleus (కేంద్రకం):</strong> Dense centre of an atom.<br><em>Ex:</em> The nucleus contains protons and neutrons. (కేంద్రకంలో ప్రోటాన్లు, న్యూట్రాన్లు ఉంటాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>7. Atomic Number (పరమాణు సంఖ్య):</strong> Number of protons in nucleus.<br><em>Ex:</em> Hydrogen has atomic number 1. (హైడ్రోజన్ పరమాణు సంఖ్య 1.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>8. Mass Number (ద్రవ్యరాశి సంఖ్య):</strong> Sum of protons and neutrons.<br><em>Ex:</em> Carbon mass number is 12. (కార్బన్ ద్రవ్యరాశి సంఖ్య 12.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>9. Valency (వాలెన్సీ):</strong> Combining capacity of an atom.<br><em>Ex:</em> Oxygen has valency 2. (ఆక్సిజన్ వాలెన్సీ 2.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>10. Isotopes (ఐసోటోపులు):</strong> Atoms with same protons, different neutrons.<br><em>Ex:</em> Carbon-12 and Carbon-14 are isotopes. (కార్బన్-12, కార్బన్-14 ఐసోటోపులు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>11. Discharge Tube (డిశ్చార్జ్ ట్యూబ్):</strong> Glass tube for gas discharge experiments.<br><em>Ex:</em> Thomson used a discharge tube. (థామ్సన్ డిశ్చార్జ్ ట్యూబ్ వాడారు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>12. Alpha Particle (ఆల్ఫా కణం):</strong> Double positively charged helium nucleus.<br><em>Ex:</em> Rutherford used alpha particles. (రూథర్‌ఫర్డ్ ఆల్ఫా కణాలను వాడారు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>13. Gold Foil (బంగారు పత్రం):</strong> Extremely thin gold sheet.<br><em>Ex:</em> Alpha particles hit the gold foil. (ఆల్ఫా కణాలు బంగారు పత్రాన్ని తాకాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>14. Energy Level (శక్తి స్థాయి):</strong> Fixed orbit of electrons.<br><em>Ex:</em> Electrons occupy energy levels. (ఎలక్ట్రాన్లు శక్తి స్థాయిలను ఆక్రమిస్తాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>15. Shell (కక్ష్య):</strong> Electron orbit layer.<br><em>Ex:</em> K is the innermost shell. (K అత్యంత లోపలి కక్ష్య.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>16. Valence Electron (వేలెన్స్ ఎలక్ట్రాన్):</strong> Outer shell electron.<br><em>Ex:</em> Carbon has four valence electrons. (కార్బన్‌‌కు నాలుగు వేలెన్స్ ఎలక్ట్రాన్లు ఉన్నాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>17. Octet (అష్టకం):</strong> Eight electrons in outer shell.<br><em>Ex:</em> Noble gases have an octet. (జడ వాయువులు అష్టక రూపాన్ని కలిగి ఉంటాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>18. Noble Gas (జడ వాయువు):</strong> Chemically unreactive element.<br><em>Ex:</em> Neon is a noble gas. (నియాన్ ఒక జడ వాయువు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>19. Nucleons (న్యూక్లియాన్లు):</strong> Protons and neutrons together.<br><em>Ex:</em> Nucleons reside in the nucleus. (న్యూక్లియాన్లు కేంద్రకంలో ఉంటాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>20. Electrolysis (విద్యుద్విశ్లేషణ):</strong> Chemical breakdown using electricity.<br><em>Ex:</em> Faraday studied electrolysis. (ఫెరడే విద్యుద్విశ్లేషణను అధ్యయనం చేశారు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>21. Plum Pudding Model (పుమ్ పుడ్డింగ్ నమూనా):</strong> Thomson's atomic model.<br><em>Ex:</em> Thomson proposed plum pudding model. (థామ్సన్ పుమ్ పుడ్డింగ్ నమూనాను ప్రతిపాదించారు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>22. Planetary Model (గ్రహాల నమూనా):</strong> Rutherford's atomic model.<br><em>Ex:</em> Rutherford's model resembles planets. (రూథర్‌ఫర్డ్ నమూనా గ్రహాలను పోలి ఉంటుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>23. Bohr-Bury Rules (బోర్-బరీ నియమాలు):</strong> Rules for electron arrangement.<br><em>Ex:</em> Electrons fill shells via Bohr-Bury rules. (బోర్-బరీ నియమాల ప్రకారం ఎలక్ట్రాన్లు నిండుతాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>24. Scattering (పరిక్షేపణము):</strong> Deflection of particles from path.<br><em>Ex:</em> Alpha particle scattering revealed the nucleus. (ఆల్ఫా కణ పరిక్షేపణం కేంద్రకాన్ని బయటపెట్టింది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>25. Detector (డిటెక్టర్):</strong> Device to spot radiation flashes.<br><em>Ex:</em> The detector showed flashes of light. (డిటెక్టర్ కాంతి పుంజాలను చూపింది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>26. Deflection (విచలనము):</strong> Bending of particle trajectory.<br><em>Ex:</em> Few particles showed large deflection. (కొన్ని కణాలు పెద్ద విచలనాన్ని చూపాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>27. Neutral (తటస్థము):</strong> Having no net electrical charge.<br><em>Ex:</em> Neutrons are neutral particles. (న్యూట్రాన్లు తటస్థ కణాలు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>28. Cation (కాటయాన్):</strong> Positively charged ion.<br><em>Ex:</em> Sodium loses electrons to form cation. (సోడియం ఎలక్ట్రాన్లను కోల్పోయి కాటయాన్ అవుతుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>29. Anion (యానియాన్):</strong> Negatively charged ion.<br><em>Ex:</em> Chlorine gains electron to form anion. (క్లోరిన్ ఎలక్ట్రాన్‌ను స్వీకరించి యానియాన్ అవుతుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>30. Protium (ప్రోటియం):</strong> Lightest isotope of hydrogen.<br><em>Ex:</em> Protium has one proton, zero neutrons. (ప్రోటియమ్‌లో ఒక ప్రోటాన్ ఉంటుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>31. Deuterium (డ్యూటెరియం):</strong> Heavy hydrogen isotope.<br><em>Ex:</em> Deuterium has one neutron. (డ్యూటెరియంలో ఒక న్యూట్రాన్ ఉంటుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>32. Tritium (ట్రిటియం):</strong> Radioactive isotope of hydrogen.<br><em>Ex:</em> Tritium is a hydrogen isotope. (ట్రిటియం హైడ్రోజన్ ఐసోటోప్.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>33. Radioactive (రేడియోధార్మికత):</strong> Spontaneous nuclear breakdown.<br><em>Ex:</em> Tritium is radioactive. (ట్రిటియం రేడియోధార్మికత కలిగి ఉంటుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>34. Goitre (గైటర్ / మెడవాపు వ్యాధి):</strong> Thyroid gland swelling.<br><em>Ex:</em> Iodine isotope treats goitre. (అయోడిన్ ఐసోటోప్ గాయిటర్ చికిత్సకు వాడతారు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>35. Reactor (రియాక్టర్):</strong> Facility for nuclear energy generation.<br><em>Ex:</em> Uranium is used in nuclear reactors. (అణు రియాక్టర్లలో యురేనియం వాడతారు.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>36. Spectrum (వర్ణపటం):</strong> Band of colors or frequencies.<br><em>Ex:</em> Hydrogen shows atomic spectra. (హైడ్రోజన్ అణు వర్ణపటాన్ని చూపుతుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>37. Stationary Orbit (స్థిర కక్ష్య):</strong> Fixed orbit where energy is constant.<br><em>Ex:</em> Electrons revolve in stationary orbits. (ఎలక్ట్రాన్లు స్థిర కక్ష్యలలో తిరుగుతాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>38. Abundance (లభ్యత శాతం):</strong> Percentage of isotope in nature.<br><em>Ex:</em> Natural isotopic abundance is fixed. (సహజ ఐసోటోప్ లభ్యత స్థిరంగా ఉంటుంది.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>39. Carbon-12 (కార్బన్-12):</strong> Standard reference isotope.<br><em>Ex:</em> Atomic masses are based on carbon-12. (పరమాణు ద్రవ్యరాశులు కార్బన్-12 ఆధారంగా ఉంటాయి.)</div>
+                <div class="p-3 bg-slate-50 rounded border"><strong>40. Stability (స్థిరత్వము):</strong> Resistance to change or decay.<br><em>Ex:</em> Octet configuration brings chemical stability. (అష్టక రూపం రసాయన స్థిరత్వాన్ని ఇస్తుంది.)</div>
+            </div>
+        </section>
+
+        <!-- EXERCISES & Q&A SECTION -->
+        <section id="exercises" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100 space-y-8">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">Textbook Exercises & Q&A (అభ్యాసాలు మరియు ప్రశ్న-జవాబులు)</h2>
+
+            <!-- Reflections on Concepts -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-blue-700 border-b pb-2">I. Reflections on Concepts (అవగాహన - ప్రతిబింబాలు)</h3>
+                
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">1. What are the three subatomic particles? (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> మూడు పరమాణు అంతర్గత కణాలు ఏమిటి?</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> The three subatomic particles are electron, proton, and neutron.<br><strong>తెలుగు వివరణ:</strong> ఎలక్ట్రాన్, ప్రోటాన్ మరియు న్యూట్రాన్ అనేవి మూడు పరమాణు అంతర్గత కణాలు.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">2. What were the three major observations Rutherford made in the gold foil experiment? (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> బంగారు పత్ర ప్రయోగంలో రూథర్‌ఫర్డ్ చేసిన మూడు ముఖ్యమైన పరిశీలనలు ఏమిటి?</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> (i) Most alpha particles passed straight through the foil without deflection. (ii) A few particles were deflected through small angles. (iii) Very few particles were deflected right back.<br><strong>తెలుగు వివరణ:</strong> (i) ఎక్కువ ఆల్ఫా కణాలు ఎలాంటి విచలనం లేకుండా నేరుగా వెళ్ళాయి. (ii) కొన్ని కణాలు చిన్న కోణాలలో విచలనం చెందాయి. (iii) అతి తక్కువ కణాలు వెనక్కి ప్రతిఫలించాయి.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">3. Give the main postulates of Bohr’s model of an atom. (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> బోర్ పరమాణు నమూనా యొక్క ముఖ్య ముఖ్యాంశాలను తెలపండి.</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> (i) Electrons revolve around the nucleus in discrete circular orbits called energy levels. (ii) While revolving in these orbits, electrons do not radiate energy.<br><strong>తెలుగు వివరణ:</strong> (i) ఎలక్ట్రాన్లు నిర్దిష్ట వృత్తాకార కక్ష్యలలో (శక్తి స్థాయిలలో) కేంద్రకం చుట్టూ తిరుగుతాయి. (ii) ఈ కక్ష్యలలో తిరిగేటప్పుడు ఎలక్ట్రాన్లు శక్తిని ఉద్గారించవు.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">4. State the valencies of magnesium and sodium. (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> మెగ్నీషియం మరియు సోడియంల వాలెన్సీలను తెలపండి.</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Sodium has a valency of 1, and Magnesium has a valency of 2.<br><strong>తెలుగు వివరణ:</strong> సోడియం వాలెన్సీ 1 మరియు మెగ్నీషియం వాలెన్సీ 2.</p>
+                </div>
+            </div>
+
+            <!-- Application of Concepts -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-blue-700 border-b pb-2">II. Application of Concepts (అవుసరాల అన్వయం)</h3>
+                
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">1. Compare the sub-atomic particles electron, proton and neutron. (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> ఎలక్ట్రాన్, ప్రోటాన్ మరియు న్యూట్రాన్ కణాలను పోల్చండి.</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Electron is negatively charged with negligible mass; proton is positively charged with a mass 1836 times that of an electron; neutron is neutral with mass almost equal to a proton.<br><strong>తెలుగు వివరణ:</strong> ఎలక్ట్రాన్ రుణావేశితం మరియు తక్కువ ద్రవ్యరాశి కలిగి ఉంటుంది; ప్రోటాన్ ధనావేశితం మరియు ఎలక్ట్రాన్ కంటే 1836 రెట్లు బరువుంటుంది; న్యూట్రాన్ ఆవేశం లేనిది మరియు ప్రోటాన్‌తో సమాన ద్రవ్యరాశి కలిగి ఉంటుంది.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">2. What are the limitations of J.J. Thomson’s model of the atom? (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> జె.జె. థామ్సన్ పరమాణు నమూనా యొక్క పరిమితులు ఏమిటి?</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Thomson's model could not explain the results of alpha-particle scattering experiments conducted by Rutherford, where most particles passed straight through.<br><strong>తెలుగు వివరణ:</strong> రూథర్‌ఫర్డ్ నిర్వహించిన ఆల్ఫా కణాల పరిక్షేపణ ప్రయోగ ఫలితాలను (ఎక్కువ కణాలు నేరుగా వెళ్లడం) థామ్సన్ నమూనా వివరించలేకపోయింది.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">3. Define valency by taking examples of nitrogen and boron. (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> నైట్రోజన్ మరియు బోరాన్ ఉదాహరణలతో వాలెన్సీని నిర్వచించండి.</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Valency is the combining capacity. Boron has 3 valence electrons (valency 3), while nitrogen with 5 valence electrons in its outer shell has a valency of 3 (8 - 5).<br><strong>తెలుగు వివరణ:</strong> సంయోగ సామర్థ్యాన్ని వాలెన్సీ అంటారు. బోరాన్‌కు 3 వేలెన్స్ ఎలక్ట్రాన్లు ఉన్నాయి (వాలెన్సీ 3); నైట్రోజన్‌‌కు బాహ్య కక్ష్యలో 5 ఎలక్ట్రాన్లు ఉండి దాని వాలెన్సీ 3 (8 - 5) అవుతుంది.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">4. What is the main difference among the isotopes of the same element? (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> ఒకే మూలకం యొక్క ఐసోటోపుల మధ్య ప్రధాన వ్యత్యాసం ఏమిటి?</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Isotopes have the same number of protons (atomic number) but differ in the number of neutrons, resulting in different mass numbers.<br><strong>తెలుగు వివరణ:</strong> ఐసోటోపులలో ప్రోటాన్ల సంఖ్య (పరమాణు సంఖ్య) సమానంగా ఉంటుంది, కానీ న్యూట్రాన్ల సంఖ్య వేరుగా ఉండటం వల్ల ద్రవ్యరాశి సంఖ్య మారుతుంది.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">5. If Z = 5, what would be the valency of the element? (AS2)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> Z = 5 అయితే, ఆ మూలకం యొక్క వాలెన్సీ ఎంత?</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> If Z = 5, the electronic configuration is 2, 3 (Boron). The number of valence electrons is 3, so its valency is 3.<br><strong>తెలుగు వివరణ:</strong> Z = 5 అయితే ఎలక్ట్రాన్ విన్యాసం 2, 3 (బోరాన్). బాహ్య కక్ష్యలో 3 ఎలక్ట్రాన్లు ఉన్నాయి కాబట్టి వాలెన్సీ 3 అవుతుంది.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">6. Fill in the missing information in the following table. (AS4)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> క్రింది పట్టికలోని ఖాళీలను పూరించండి.</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong><br>• Oxygen: Symbol O, Z = 8, A = 16, Neutrons = 8, Electrons = 8.<br>• Beryllium: Symbol Be, Z = 4, A = 9, Neutrons = 5, Electrons = 4.<br>• Sulphur: Symbol S, Z = 16, A = 32, Neutrons = 16, Electrons = 16.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">7. Sketch Rutherford’s atomic model. Why is Rutherford’s model called the planetary model? (AS5)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> రూథర్‌‌ఫర్డ్ పరమాణు నమూనాను గీయండి. దానిని గ్రహాల నమూనా అని ఎందుకు అంటారు?</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Rutherford's model is called the planetary model because electrons revolve around the central nucleus in orbits just like planets revolve around the Sun.<br><strong>తెలుగు వివరణ:</strong> సూర్యుని చుట్టూ గ్రహాలు తిరిగినట్లుగానే, కేంద్రకం చుట్టూ ఎలక్ట్రాన్లు కక్ష్యలలో తిరుగుతాయి కాబట్టి రూథర్‌‌ఫర్డ్ నమూనాను గ్రహాల నమూనా అంటారు.</p>
+                </div>
+            </div>
+
+            <!-- Higher Order Thinking Questions -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-blue-700 border-b pb-2">III. Higher Order Thinking Questions (ఉన్నత స్థాయి ఆలోచనా ప్రశ్నలు)</h3>
+                
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">1. Cl- has completely filled K, L & M shells. Explain it based on Bohr-Bury theory. (AS1)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> బోర్-బరీ సిద్ధాంతం ప్రకారం క్లోరిన్ అయన్ (Cl-) కు K, L మరియు M కక్ష్యలు పూర్తిగా నిండి ఉంటాయని వివరించండి.</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Neutral chlorine (Z = 17) has configuration 2, 8, 7. By gaining 1 electron to form Cl-, it gets 18 electrons (2, 8, 8), completely filling K (2), L (8), and M (8) shells.<br><strong>తెలుగు వివరణ:</strong> తటస్థ క్లోరిన్ (Z = 17) విన్యాసం 2, 8, 7. ఇది ఒక ఎలక్ట్రాన్‌ను స్వీకరించి Cl- గా మారినప్పుడు 18 ఎలక్ట్రాన్లు (2, 8, 8) ఏర్పడి K, L, M కక్ష్యలు పూర్తిగా నిండుతాయి.</p>
+                </div>
+
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                    <p class="font-bold text-slate-900">2. Explain the efforts made by scientists to explain the structure of atom by developing various atomic models? (AS6)</p>
+                    <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> వివిధ పరమాణు నమూనాలను అభివృద్ధి చేయడం ద్వారా పరమాణు నిర్మాణాన్ని వివరించడానికి శాస్త్రవేత్తలు చేసిన ప్రయత్నాలను వివరించండి.</p>
+                    <p class="text-sm bg-blue-50 p-3 rounded"><strong>Answer:</strong> Scientists progressed from Dalton's indivisible atom to Thomson's plum pudding model, Rutherford's nuclear planetary model based on alpha scattering, and finally to Bohr's discrete energy level model.<br><strong>తెలుగు వివరణ:</strong> శాస్త్రవేత్తలు డాల్టన్ అవిభాజ్య పరమాణువు నుండి థామ్సన్ పుమ్-పుడ్డింగ్ నమూనాకు, రూథర్‌ఫర్డ్ కేంద్రీకృత నమూనాకు, చివరకు బోర్ శక్తి స్థాయిల నమూనాకు క్రమంగా అభివృద్ధి చేశారు.</p>
+                </div>
+            </div>
+
+            <!-- Multiple Choice Questions -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-blue-700 border-b pb-2">IV. Multiple Choice Questions (బహుళైచ్ఛిక ప్రశ్నలు)</h3>
+                
+                <div class="p-4 bg-slate-50 rounded-lg border space-y-2 text-sm">
+                    <p><strong>1. Electron was invented by:</strong> [ a ]<br>a) Thomson &nbsp; b) Chadwick &nbsp; c) Goldstein &nbsp; d) Stoney</p>
+                    <p><strong>2. Proton was invented by:</strong> [ c ]<br>a) Thomson &nbsp; b) Chadwick &nbsp; c) Goldstein &nbsp; d) Stoney</p>
+                    <p><strong>3. Neutron was invented by:</strong> [ b ]<br>a) Thomson &nbsp; b) Chadwick &nbsp; c) Goldstein &nbsp; d) Stoney</p>
+                    <p><strong>4. α-particles are made up of the following primary particles:</strong> [ a ]<br>a) 2 protons and 2 neutrons &nbsp; b) 2 Protons and 2 Electrons &nbsp; c) 2 Neutrons and 2 Positrons &nbsp; d) 2 Protons and 2 Neutrinos</p>
+                    <p><strong>5. Which model of atom is known as Planetary model:</strong> [ c ]<br>a) Thomson’s model &nbsp; b) Rutherford’s model &nbsp; c) Bohr’s model &nbsp; d) Modern atomic model</p>
+                    <p><strong>6. Valency of Aluminium is:</strong> [ c ]<br>a) 1 &nbsp; b) 2 &nbsp; c) 3 &nbsp; d) 4</p>
+                    <p><strong>7. The gas which is stable without octet configuration is:</strong> [ d ]<br>a) Neon &nbsp; b) Argon &nbsp; c) Radon &nbsp; d) Helium</p>
+                    <p><strong>8. The sum of the number of protons and neutrons in an atom is known as its:</strong> [ a ]<br>a) Mass number &nbsp; b) Atomic number &nbsp; c) Valency &nbsp; d) Ion number</p>
+                    <p><strong>9. Deuterium and Tritium are the Isotopes of:</strong> [ c ]<br>a) Nitrogen &nbsp; b) Oxygen &nbsp; c) Hydrogen &nbsp; d) Helium</p>
+                    <p><strong>10. The electronic configuration of Sodium is:</strong> [ d ]<br>a) 2,8 &nbsp; b) 8,2,1 &nbsp; c) 2,1,8 &nbsp; d) 2,8,1</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUGGESTED PROJECTS SECTION -->
+        <section id="projects" class="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-slate-100 space-y-6">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">Suggested Projects (సూచించిన ప్రాజెక్టులు)</h2>
+            <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+                <p class="font-bold text-slate-900">1. Write a report on the history of unveiling the structure of atom from John Dalton to Niels Bohr.</p>
+                <p class="text-sm text-slate-600"><strong>తెలుగు:</strong> జాన్ డాల్టన్ నుండి నీల్స్ బోర్ వరకు పరమాణు నిర్మాణాన్ని ఆవిష్కరించిన చరిత్రపై నివేదిక రాయండి.</p>
+                <p class="text-sm bg-blue-50 p-3 rounded"><strong>Project Guidelines:</strong> Trace the chronological milestones starting from Dalton's solid sphere theory, Thomson's discovery of electrons and plum pudding model, Rutherford's alpha scattering nucleus discovery, up to Bohr's stationary energy levels.<br><strong>తెలుగు వివరణ:</strong> డాల్టన్ సిద్ధాంతం నుండి థామ్సన్, రూథర్‌ఫర్డ్, మరియు బోర్ నమూనాల వరకు పరమాణు నిర్మాణం అభివృద్ధి చెదరిన క్రమాన్ని కాలనిరూపణ పద్ధతిలో నివేదికగా తయారుచేయాలి.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition z-40">
+        ↑ Top
+    </button>
+
+    <!-- SCRIPT FOR TRACKING & TIMER -->
+    <script>
+        let startTime = Date.now();
+        let timerInterval;
+
+        document.getElementById('visitorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('visitorName').value;
+            const roll = document.getElementById('visitorRoll').value;
+            if(name && roll) {
+                document.getElementById('visitorModal').style.display = 'none';
+                startTimer();
+            }
+        });
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                let elapsed = Math.floor((Date.now() - startTime) / 1000);
+                let mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+                let secs = String(elapsed % 60).padStart(2, '0');
+                document.getElementById('sessionTimer').innerText = `Time Spent: ${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function sendReport() {
+            const name = document.getElementById('visitorName').value || "Unknown Student";
+            const roll = document.getElementById('visitorRoll').value || "N/A";
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const subject = encodeURIComponent("Study Report - What is Inside the Atom Chapter");
+            const body = encodeURIComponent(`Student Name: ${name}\nRoll Number: ${roll}\nTotal Study Time: ${elapsed} seconds.`);
+            window.location.href = `mailto:balaswamysm@gmail.com?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
